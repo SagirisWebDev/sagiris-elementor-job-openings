@@ -1,0 +1,21 @@
+# Dependencies (installed at build time)
+/vendor/
+/node_modules/
+
+# Local / editor
+.DS_Store
+.env
+.env.*
+/.idea/
+/.vscode/
+/.claude/
+
+# Local-only harness config (not shipped with the repo)
+/.swd-harness/
+
+# Logs
+*.log
+
+# Test artifacts
+/.phpunit.result.cache
+/test-results/
