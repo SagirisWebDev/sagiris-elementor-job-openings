@@ -19,6 +19,7 @@ class Plugin {
 		add_action( 'add_meta_boxes', array( Job_Listing_Post_Type::class, 'register_meta_box' ) );
 		add_action( 'save_post_job_listing', array( Job_Listing_Post_Type::class, 'save_meta' ) );
 		add_action( 'elementor/widgets/register', array( __CLASS__, 'register_widgets' ) );
+		add_action( 'rest_api_init', array( REST_Controller::class, 'register_routes' ) );
 	}
 
 	/**
