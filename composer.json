@@ -1,0 +1,42 @@
+{
+    "name": "sagiris/elementor-job-openings",
+    "description": "Custom Elementor widget for a company careers/job-openings list, backed by a shared query service exposed over REST and optional WPGraphQL.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Sagiris",
+            "homepage": "https://sagirisdev.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^13.2",
+        "wp-coding-standards/wpcs": "^3.1",
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sagiris\\ElementorJobOpenings\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sagiris\\ElementorJobOpenings\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "lint": "phpcs",
+        "lint:fix": "phpcbf",
+        "test": "phpunit"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "sort-packages": true
+    }
+}
