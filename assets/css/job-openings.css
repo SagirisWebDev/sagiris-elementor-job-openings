@@ -27,3 +27,13 @@
 	color: #666;
 	margin-block-start: 0.25rem;
 }
+
+.sagiris-ejo__empty {
+	background: #fff;
+	border-radius: 8px;
+	padding: 1.5rem;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+	color: #666;
+	font-style: italic;
+	margin: 0;
+}
