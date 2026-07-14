@@ -29,7 +29,14 @@ class Job_Listing_Repository {
 		return array_map( array( __CLASS__, 'normalize' ), $posts );
 	}
 
-	private static function normalize( \WP_Post $post ): array {
+	/**
+	 * Public so the single-listing template can normalize the current post
+	 * without duplicating this field-extraction logic - deliberately NOT
+	 * routed through Job_Listing_Filter, since a listing's own page must
+	 * stay viewable after its closing date even though list views exclude
+	 * it by default.
+	 */
+	public static function normalize( \WP_Post $post ): array {
 		$closing_date_raw = get_post_meta( $post->ID, '_sagiris_ejo_closing_date', true );
 
 		return array(
