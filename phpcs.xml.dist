@@ -2,6 +2,7 @@
 <ruleset name="Sagiris Elementor Job Openings">
 	<description>Coding standards for the Sagiris Elementor Job Openings plugin.</description>
 
+	<file>sagiris-elementor-job-openings.php</file>
 	<file>src</file>
 	<file>tests</file>
 
