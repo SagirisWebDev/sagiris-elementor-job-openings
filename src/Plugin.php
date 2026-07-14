@@ -20,6 +20,7 @@ class Plugin {
 		add_action( 'save_post_job_listing', array( Job_Listing_Post_Type::class, 'save_meta' ) );
 		add_filter( 'template_include', array( Job_Listing_Post_Type::class, 'template_include' ) );
 		add_action( 'elementor/widgets/register', array( __CLASS__, 'register_widgets' ) );
+		add_action( 'elementor/frontend/after_register_styles', array( __CLASS__, 'register_styles' ) );
 		add_action( 'rest_api_init', array( REST_Controller::class, 'register_routes' ) );
 
 		GraphQL_Type::maybe_register();
@@ -46,5 +47,14 @@ class Plugin {
 	 */
 	public static function register_widgets( $widgets_manager ): void {
 		$widgets_manager->register( new Widget_Job_Openings() );
+	}
+
+	public static function register_styles(): void {
+		wp_register_style(
+			'sagiris-ejo',
+			SAGIRIS_EJO_URL . 'assets/css/job-openings.css',
+			array(),
+			SAGIRIS_EJO_VERSION
+		);
 	}
 }

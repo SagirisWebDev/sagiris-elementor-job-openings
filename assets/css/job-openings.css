@@ -1,0 +1,29 @@
+.sagiris-ejo__list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sagiris-ejo__item {
+	background: #fff;
+	border-radius: 8px;
+	padding: 1.5rem;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.sagiris-ejo__title {
+	display: block;
+	font-weight: 600;
+	text-decoration: none;
+	color: inherit;
+}
+
+.sagiris-ejo__meta {
+	display: block;
+	font-size: 0.85rem;
+	color: #666;
+	margin-block-start: 0.25rem;
+}
