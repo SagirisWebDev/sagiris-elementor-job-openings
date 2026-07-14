@@ -20,6 +20,8 @@ class Plugin {
 		add_action( 'save_post_job_listing', array( Job_Listing_Post_Type::class, 'save_meta' ) );
 		add_action( 'elementor/widgets/register', array( __CLASS__, 'register_widgets' ) );
 		add_action( 'rest_api_init', array( REST_Controller::class, 'register_routes' ) );
+
+		GraphQL_Type::maybe_register();
 	}
 
 	/**
