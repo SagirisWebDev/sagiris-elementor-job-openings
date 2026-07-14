@@ -91,6 +91,26 @@ class Job_Listing_Post_Type {
 		<?php
 	}
 
+	/**
+	 * Serves the plugin's bundled single-listing template, unless the
+	 * active theme provides its own single-job_listing.php - theme
+	 * overrides always take priority, matching WordPress's own template
+	 * hierarchy convention.
+	 */
+	public static function template_include( string $template ): string {
+		if ( ! is_singular( 'job_listing' ) ) {
+			return $template;
+		}
+
+		$theme_template = locate_template( array( 'single-job_listing.php' ) );
+
+		if ( $theme_template ) {
+			return $theme_template;
+		}
+
+		return SAGIRIS_EJO_PATH . 'templates/single-job_listing.php';
+	}
+
 	public static function save_meta( int $post_id ): void {
 		if ( ! isset( $_POST['sagiris_ejo_meta_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['sagiris_ejo_meta_nonce'] ) ), 'sagiris_ejo_save_meta' ) ) {
 			return;
